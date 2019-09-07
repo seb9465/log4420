@@ -1,1 +1,49 @@
 @import "/font-awesome/css/font-awesome.css";
+
+header {
+	overflow:hidden;
+	border-bottom: 1px solid black;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+#header-title-section {
+	float: left;
+	margin-right: 10px;
+}
+
+.header-main-title {
+	margin: 0;
+	color: orange;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.header-second-title {
+	margin: 0;
+}
+
+#header-navigation-section {
+	float: right;
+	margin-top: 15px;
+}
+
+.navigation-button {
+	display: inline-block;
+	color: blue;
+	padding: 10px;
+	margin-right: 10px;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+
+footer {
+	width:100%;
+	left:0;
+	right:0;
+	bottom:0;
+	border-top: 1px solid black;
+	text-align:center;
+}

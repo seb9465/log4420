@@ -6,21 +6,21 @@ html
 
 	block body
 		body
-			header(style="overflow:hidden;border-bottom: 1px solid black;")
+			header
+				div#header-title-section
+					p.header-main-title Labo Semantic IA
+					p.header-second-title Intelligence artificielle
+					p.header-second-title Web sémantique
 				div(style="float:left;")
-					p Labo Semantic IA
-					p Intelligence artificielle
-					p Web sémantique
-				div
-					img(src='./img/logo-coding.png')
-				div(style="float:right;")
-					a(href='./index.pug') Home
-					a(href='./team.pug') Team
-					a(href='./projects.pug') Projects
-					a(href='./publications.pug') Publications
-					a Contact
+					img(src='./img/logo-coding.png' style="height:60px;")
+				div#header-navigation-section
+					a.navigation-button(href='./index.pug') Home
+					a.navigation-button(href='./team.pug') Team
+					a.navigation-button(href='./projects.pug') Projects
+					a.navigation-button(href='./publications.pug') Publications
+					a.navigation-button Contact
 			block content
-			footer(style="width:100%;position:fixed;left:0;right:0;bottom:0;background-color:white;border-top: 1px solid black;text-align:center;")
+			footer
 				p foooooooter
 
 	
