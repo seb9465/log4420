@@ -1,0 +1,26 @@
+html
+	// Include le fichier CSS avec: link(rel="stylesheet", href="/style.css")
+	
+	link(href="./style.css" rel="stylesheet" type="text/css")
+	include ./views/head
+
+	block body
+		body
+			header(style="overflow:hidden;border-bottom: 1px solid black;")
+				div(style="float:left;")
+					p Labo Semantic IA
+					p Intelligence artificielle
+					p Web sémantique
+				div
+					img(src='./img/logo-coding.png')
+				div(style="float:right;")
+					a(href='./index.pug') Home
+					a(href='./team.pug') Team
+					a(href='./projects.pug') Projects
+					a(href='./publications.pug') Publications
+					a Contact
+			block content
+			footer(style="width:100%;position:fixed;left:0;right:0;bottom:0;background-color:white;border-top: 1px solid black;text-align:center;")
+				p foooooooter
+
+	
