@@ -14,10 +14,11 @@ function pugServer(viewsPath) {
 
   let server = http.createServer(function (req, res) {
     if (req.url.match(/\.(jade|pug)$/) || req.url === '/') {
+		console.log('Requested url : ' + req.url);
       const file = (req.url === '/') ? '/index.pug' : req.url
 
       try {
-        res.writeHead(200, {'Content-Type': 'text/html'})
+		res.writeHead(200, {'Content-Type': 'text/html'})
         res.end(
           pug.renderFile(filePath + file, {
             pretty: true
