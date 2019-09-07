@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node pug-server.js"
+    "start": "node pug-server.js",
+    "setup": "npm install"
   },
   "author": "Konstantinos Lambrou-Latreille",
   "dependencies": {
