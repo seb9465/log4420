@@ -7,8 +7,10 @@
     "start": "node pug-server.js"
   },
   "author": "Konstantinos Lambrou-Latreille",
+  "dependencies": {
+	  "pug": "^2.0.4"
+  },
   "devDependencies": {
     "node-static": "^0.7.11",
-    "pug": "^2.0.4"
   }
 }
