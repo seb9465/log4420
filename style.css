@@ -37,6 +37,23 @@ header {
 	text-align: center;
 }
 
+.navigation-button:hover {
+	border-radius: 5px;
+	color: white;
+	background-color: blue;
+}
+
+
+
+/*
+	Project Section
+*/
+
+.project-sub-title {
+	color: grey;
+	font-size: 12px;
+}
+
 
 
 footer {
@@ -46,4 +63,16 @@ footer {
 	bottom:0;
 	border-top: 1px solid black;
 	text-align:center;
+}
+
+/* 
+	Universal
+*/
+
+.no-margins {
+	margin: 0;
+}
+
+.font-size-14 {
+	font-size: 14px;
 }
