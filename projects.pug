@@ -7,7 +7,11 @@ block content
 		ul
 			each project in currentProjects
 				li.font-size-14
-					p.font-size-14.no-margin #{project.student}, #{project.title}
+					if (project._id !== "garandphd")
+						p.font-size-14.no-margin #{project.student}, #{project.title}
+					else
+						p.font-size-14.no-margin #{project.student}, 
+						a(href="./project-maillouxmaster.pug") #{project.title}
 					p.project-sub-title.no-margin Supervisor: #{project.supervisor}
 					p.project-sub-title.no-margin Co-supervisor(s): #{project.cosupervisors}
 
