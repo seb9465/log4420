@@ -8,12 +8,12 @@ block content
 			each project in currentProjects
 				li.font-size-14
 					if (project._id !== "garandphd")
-						p.font-size-14.no-margin #{project.student}, #{project.title}
+						p.font-size-14.no-margins #{project.student}, #{project.title}
 					else
-						p.font-size-14.no-margin #{project.student}, 
+						p.font-size-14.no-margins.display-inline #{project.student}, 
 						a(href="./project-maillouxmaster.pug") #{project.title}
-					p.project-sub-title.no-margin Supervisor: #{project.supervisor}
-					p.project-sub-title.no-margin Co-supervisor(s): #{project.cosupervisors}
+					p.project-sub-title.no-margins Supervisor: #{project.supervisor}
+					p.project-sub-title.no-margins Co-supervisor(s): #{project.cosupervisors}
 
 	h1 Past projects
 
