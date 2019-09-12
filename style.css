@@ -1,5 +1,10 @@
 @import "/font-awesome/css/font-awesome.css";
 
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
 header {
 	overflow:hidden;
 	border-bottom: 1px solid black;
@@ -54,19 +59,23 @@ header {
 	font-size: 12px;
 }
 
+#content {
+	min-height: 100%;
+	margin-bottom: 40px;
+}
 
 footer {
+	position: fixed;
+	height: 40px;
 	width:100%;
 	left:0;
-	right:0;
 	bottom:0;
-	border-top: 1px solid black;
+	border-top: 1px solid grey;
+	color: grey;
+	background-color: white;
 	text-align:center;
+	overflow: hidden;
 }
-/* footer {
-	position: fixed;
-	bottom: 0;
-} */
 
 /* 
 	Universal

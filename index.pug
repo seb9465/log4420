@@ -7,11 +7,12 @@ block content
 
 	h1 Nouvelles
 
-	each feed in feeds
-		li
-			p= feed.date
-			p= feed.title
-			p= feed.presentator
-			p= feed.createdAt
-			p= feed.location
-			p= feed.type
+	ul
+		each feed in feeds
+			li
+				p= feed.date
+				p= feed.title
+				p= feed.presentator
+				p= feed.createdAt
+				p= feed.location
+				p= feed.type
