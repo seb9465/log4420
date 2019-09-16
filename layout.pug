@@ -2,8 +2,11 @@ html
 	// Include le fichier CSS avec: link(rel="stylesheet", href="/style.css")
 	
 	link(href="./style.css" rel="stylesheet" type="text/css")
-	include ./views/head
 
+	head
+		title TP1 - LOG4420
+		meta(charset='utf-8')
+		
 	block body
 		body
 			header
@@ -12,13 +15,21 @@ html
 					p.header-second-title Intelligence artificielle
 					p.header-second-title Web sémantique
 				div(style="float:left;")
-					img(src='./img/logo-coding.png' style="height:60px;")
+					img#header-img(src='./img/logo-coding.png')
 				div#header-navigation-section
-					a.navigation-button(href='./index.pug') Home
+					a.navigation-button.active-nav-btn(href='./index.pug') Home
 					a.navigation-button(href='./team.pug') Team
 					a.navigation-button(href='./projects.pug') Projects
 					a.navigation-button(href='./publications.pug') Publications
 					a.navigation-button Contact
+					//- <button class="dropbtn">Dropdown 
+					//- 	<i class="fa fa-caret-down"></i>
+					//- </button>
+					//- <div class="dropdown-content">
+					//- 	<a href="#">Link 1</a>
+					//- 	<a href="#">Link 2</a>
+					//- 	<a href="#">Link 3</a>
+					//- </div>
 			div#content
 				block content
 			footer
