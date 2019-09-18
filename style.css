@@ -41,6 +41,9 @@
   /* Couleur de la date de publication + une couleur pour l'image produit par font-awesome */
   --news-post-date-color: #888;
   --news-icon-color: #bbb;
+  --news-img-height: 45px;
+  --news-img-width: 45px;
+  --news-icon-size: 45px;
 
   /* Couleur et taille d'un membre dans la page d'équipe. */
   --member-name-size: 1.1rem;
@@ -64,6 +67,9 @@
   --metadata-text-size: .8em;
 }
 
+/*
+  Main elements
+*/
 
 html, body {
 	height: 100%;
@@ -88,6 +94,24 @@ header {
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 }
+
+footer {
+	position: fixed;
+	height: 40px;
+	width:100%;
+	left:0;
+	bottom:0;
+	border-top: var(--separator-border-size) solid var(--separator-border-color);
+  color: var(--metadata-text-color);
+  font-size: var(--metadata-text-size);
+	background-color: white;
+	text-align:center;
+	overflow: hidden;
+}
+
+/*
+  Header
+*/
 
 #header-img {
 	width: var(--logo-width);
@@ -141,18 +165,44 @@ header {
 /*
 	Index page
 */
-
-#index-page-description {
-	background-color: var(--home-description-background-color);
+#index-page-description-wrapper {
+  background-color: var(--home-description-background-color);
+  padding: 30px;
 }
 
-/*
-	News
-*/
+#index-news-list {
+  margin-bottom: 40px;
+}
+
+#index-news-list  p { 
+  margin: 0;
+}
+
 .feeds-post-date {
 	color: var(--news-post-date-color);
 }
 
+.index-news-wrapper {
+  height: 70px;
+  width: 70px;
+  float: left;
+}
+
+.index-news-img {
+  height: var(--news-img-height);
+  width: var(--news-img-width);
+  opacity: 0.3;
+}
+
+.index-news-ico {
+  font-size: var(--news-icon-size);
+  color: var(--news-icon-color);
+}
+
+.index-news-img,
+.index-news-ico {
+  padding-top: 10px;
+}
 
 /*
 	Project Section
@@ -168,18 +218,8 @@ header {
 	margin-bottom: 40px;
 }
 
-footer {
-	position: fixed;
-	height: 40px;
-	width:100%;
-	left:0;
-	bottom:0;
-	border-top: 1px solid grey;
-	color: grey;
-	background-color: white;
-	text-align:center;
-	overflow: hidden;
-}
+
+
 
 /* 
 	Universal

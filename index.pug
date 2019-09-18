@@ -3,17 +3,19 @@ extends layout
 block content
 	include ./views/descriptions
 	include ./views/feeds
-	span#index-page-description!= description.split("\n")
+	#index-page-description-wrapper
+		span!= description.split("\n")
 
 	h1 Nouvelles
 
 	ul(style="list-style-type:none;")
 		each feed in feeds
-			li
-				if (feed.type === 'seminar')
-					img(src='./img/presentation-icon.png')
-				else 
-					i.fa.fa-file-text-o
+			li#index-news-list
+				.index-news-wrapper
+					if (feed.type === 'seminar')
+						img.index-news-img(src='./img/presentation-icon.png')
+					else 
+						i.fa.fa-file-text-o.index-news-ico
 
 				p.feeds-post-date= feed.createdAt
 				p Prochain Séminaire : #{feed.title}
