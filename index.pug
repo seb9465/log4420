@@ -3,7 +3,7 @@ extends layout
 block content
 	include ./views/descriptions
 	include ./views/feeds
-	span!= description.split("\n")
+	span#index-page-description!= description.split("\n")
 
 	h1 Nouvelles
 

@@ -72,9 +72,19 @@ html, body {
 	font: var(--my-font-size) var(--my-font-family) ;
 }
 
+
+a {
+	color: var(--link-text-color);
+}
+
+a:active {
+	background-color: var(--link-active-background-color);
+	color: var(--link-active-color);
+}
+
 header {
 	overflow:hidden;
-	border-bottom: 1px solid black;
+	border-bottom: var(--separator-border-size) solid var(--separator-border-color);
 	margin-bottom: 20px;
 	padding-bottom: 10px;
 }
@@ -90,13 +100,16 @@ header {
 }
 
 .header-main-title {
+	font-family: var(--site-title-family);
+	font-size: var(--site-title-size);
+	color: var(--site-title-color);
 	margin: 0;
-	color: orange;
-	font-weight: bold;
-	font-size: 24px;
 }
 
 .header-second-title {
+	font-family: var(--site-title-family);
+	font-size: var(--site-subtitle-size);
+	color: var(--site-title-color);
 	margin: 0;
 }
 
@@ -112,14 +125,25 @@ header {
 	margin-right: 10px;
 	text-decoration: none;
 	text-align: center;
+	border-radius: 5px;
+	background-color: var(--nav-lang-background-color);
 }
 
-.active-nav-btn,
-.navigation-button:active,
+.navigation-button:active {
+	background-color: var(--nav-lang-background-color-active);
+	color: var(--nav-lang-color-active);
+}
+
 .navigation-button:hover {
-	border-radius: 5px;
-	color: var( --link-active-color);
-	background-color: var(--link-active-background-color);
+	background-color: var(--nav-lang-background-color-hover);
+}
+
+/*
+	Index page
+*/
+
+#index-page-description {
+	background-color: var(--home-description-background-color);
 }
 
 /*
