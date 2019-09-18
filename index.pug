@@ -18,7 +18,10 @@ block content
 						i.fa.fa-file-text-o.index-news-ico
 
 				p.feeds-post-date= feed.createdAt
-				p Prochain Séminaire : #{feed.title}
-				p= feed.presentator
-				p= feed.date
-				p!= feed.location
+				if (feed.type === 'seminar')
+					p Prochain Séminaire : #{feed.title}
+					p= feed.presentator
+					p= feed.date
+					p!= feed.location
+				else
+					p!= feed.text
