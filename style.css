@@ -218,7 +218,49 @@ footer {
 	margin-bottom: 40px;
 }
 
+/*
+  Teams
+*/
 
+.team-list-wrapper {
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.team-member-wrapper {
+  float: left;
+}
+
+.team-member-image-wrapper {
+  float: left;
+  margin-right: 10px;
+}
+
+.team-member-image {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.team-member-infos-wrapper {
+  display: grid;
+  margin-top: 5px;
+}
+
+.team-member-infos-name {
+  font-size: var(--member-name-size);
+}
+
+.team-member-infos-title {
+  margin: 0;
+  margin-top: 15px;
+  font-size: var(--member-title-size);
+  color: var(--member-title-color);
+}
+
+.team-member-infos-email {
+  font-size: var(--member-title-size);
+}
 
 
 /* 
