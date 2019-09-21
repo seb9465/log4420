@@ -27,17 +27,21 @@ block content
 		});
 		var titleKeys = Object.keys(membersByTitle);
 		var pastMembersTitleKeys = Object.keys(pastMembers);
+
+	mixin keyToTitleText(key)
+		if (key === 'associateprofessor')
+			h3.team-title Professors
+		else if (key === 'masterstudent')
+			h3.team-title Master students
+		else if (key === 'phdstudent')
+			h3.team-title PhD students
+		else if (key === 'researchassociate')
+			h3.team-title Research associates
+
 	h1 Team
 
 	each key in titleKeys
-		if (key === 'associateprofessor')
-			h3 Professors
-		else if (key === 'masterstudent')
-			h3 Master students
-		else if (key === 'phdstudent')
-			h3 PhD students
-		else if (key === 'researchassociate')
-			h3 Research associates
+		+keyToTitleText(key)
 			
 		ul.team-list-wrapper
 			each member in membersByTitle[key]
@@ -58,14 +62,16 @@ block content
 							if (member.email)
 								a.team-member-infos-email= member.email
 
-
+	br
 	h2 Past members
+	#team-past-members-container
 		each key in pastMembersTitleKeys
-			h3= key
-			ul(style="list-style-type:none;")
-				each member in pastMembers[key]
-					li
-						p #{member.firstname} &nbsp; #{member.lastname}
+			.team-past-members-title-container
+				+keyToTitleText(key)
+				ul.team-past-member-list-wrapper
+					each member in pastMembers[key]
+						li
+							span.team-past-members-name #{member.firstname} &nbsp; #{member.lastname}
 
 					
 	

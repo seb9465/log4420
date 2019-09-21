@@ -222,6 +222,10 @@ footer {
   Teams
 */
 
+.team-title {
+  margin-top: 20px;
+}
+
 .team-list-wrapper {
   overflow: hidden;
   list-style-type: none;
@@ -232,7 +236,6 @@ footer {
 
 .team-member-wrapper {
   float: left;
-
 }
 
 .team-member-image-wrapper {
@@ -269,6 +272,31 @@ footer {
 
 .team-member-infos-email {
   font-size: var(--member-title-size);
+}
+
+#team-past-members-container {
+  overflow: hidden;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20px;
+}
+
+.team-past-members-title-container {
+text-align: center;
+}
+
+.team-past-member-list-wrapper {
+  overflow: hidden;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto;
+  padding: 0;
+}
+
+.team-past-members-name {
+  color: var(--metadata-text-color);
+  /* font-size: var(--metadata-text-size); */
 }
 
 
