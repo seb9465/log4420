@@ -225,10 +225,14 @@ footer {
 .team-list-wrapper {
   overflow: hidden;
   list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
 }
 
 .team-member-wrapper {
   float: left;
+
 }
 
 .team-member-image-wrapper {
@@ -249,11 +253,16 @@ footer {
 
 .team-member-infos-name {
   font-size: var(--member-name-size);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.team-member-sub-infos-wrapper {
+  margin-top: 10px;
 }
 
 .team-member-infos-title {
   margin: 0;
-  margin-top: 15px;
   font-size: var(--member-title-size);
   color: var(--member-title-color);
 }

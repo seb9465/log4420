@@ -51,11 +51,12 @@ block content
 						if (member.homepage)
 							a.team-member-infos-name(href=member.homepage) #{member.firstname} &nbsp; #{member.lastname}
 						else
-							p #{member.firstname} &nbsp; #{member.lastname}
-						if (key === 'associateprofessor')
-							p.team-member-infos-title Associate professor
-						if (member.email)
-							a.team-member-infos-email= member.email
+							span.team-member-infos-name #{member.firstname} &nbsp; #{member.lastname}
+						.team-member-sub-infos-wrapper
+							if (key === 'associateprofessor')
+								p.team-member-infos-title Associate professor
+							if (member.email)
+								a.team-member-infos-email= member.email
 
 
 	h2 Past members
