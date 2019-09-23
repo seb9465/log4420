@@ -1,114 +1,47 @@
 extends layout
 
 block content
-	p Publications 
-	-
-		const publications = [
-			{
-			"_id": "5d681f5b3264ae32060d308e",
-			"year": 2020,
-			"month": "mai",
-			"title": "Title test",
-			"authors": [
-				"Author test",
-				"Author test 2"
-			],
-			"venue": "Venue test"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a11f",
-			"year": 2018,
-			"month": "juin",
-			"authors": [
-				"Leonard Bourgoin",
-				"Alphonsine Beauchamps",
-				"Michel Deslauriers"
-			],
-			"title": "LAMA: a language adaptive method for question answering",
-			"venue": "Scalable Question Answering over Linked Data Challenge (SQA2018), Heraklion, Greece"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a11c",
-			"year": 2018,
-			"month": "mai",
-			"authors": [
-				"Simoneau Fleurilius",
-				"Alphonsine Beauchamps",
-				"Michel Deslauriers",
-				"Michel Jean"
-			],
-			"title": "A Machine Learning Filter for the Slot Filling Task",
-			"venue": "Information 2018, 9(6), 133"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a11d",
-			"year": 2018,
-			"month": "janvier",
-			"authors": [
-				"Patrick Anderson",
-				"Michel Deslauriers",
-				"Alphonsine Beauchamps"
-			],
-			"title": "FICLONE: Improving DBpedia Spotlight Using Named Entity Recognition and Collective Disambiguation",
-			"venue": "Open Journal of Semantic Web (OJSW) 5.1 (2018): 12-28."
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a120",
-			"year": 2017,
-			"month": "novembre",
-			"authors": [
-				"Alphonsine Beauchamps",
-				"Michel Deslauriers",
-				"Michel Jean"
-			],
-			"title": "An assessment of open relation extraction systems for the semantic web",
-			"venue": "Information Systems, Volume 71, p. 228-239"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a122",
-			"year": 2017,
-			"month": "octobre",
-			"authors": [
-				"Leonard Bourgoin",
-				"Michel Deslauriers",
-				"Alphonsine Beauchamps"
-			],
-			"title": "AMAL: Answering French Natural Language Questions using DBpedia",
-			"venue": "ESWC 2017 Semantic Web Challenges, Springer"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a123",
-			"year": 2017,
-			"month": "janvier",
-			"authors": [
-				"Christophe Deniger",
-				"Alphonsine Beauchamps",
-				"Michel Deslauriers"
-			],
-			"title": "Assessing and Improving Domain Knowledge Representation in DBpedia",
-			"venue": "Open Journal of Semantic Web (OJSW), 4(1) : p. 1-19"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a121",
-			"year": 2017,
-			"authors": [
-				"Leonard Bourgoin",
-				"Michel Deslauriers",
-				"Alphonsine Beauchamps"
-			],
-			"title": "Answering Natural Language Questions on RDF Knowledge base in French",
-			"venue": "Question Answering over Linked Data Challenge. (1st place of QALD 2017 – Question answering in French)"
-			},
-			{
-			"_id": "5d67d442a5c77bebf633a125",
-			"year": 2016,
-			"month": "juillet",
-			"authors": [
-				"Joey Gelinas",
-				"Alphonsine Beauchamps",
-				"Michel Deslauriers"
-			],
-			"title": "Automatic Extraction of Axioms from Wikipedia Using SPARQL",
-			"venue": "ESWC-16 Open Knowledge Extraction Challenge, Heraklion, Greece"
-			}
-		];
+	include ./views/publications-variables
+	
+	h1 Publications 
+	button Ajouter une publication
+	
+	section
+		i.fa.fa-window-close.fa-2x.close-button
+		h1 Création d'une publication
+		form
+			span Année :&nbsp;
+			input(type="number" name="year" value="2020" min="1900" max="2099")
+			br
+			span Mois :&nbsp;
+			input(list="months" name="month" required)
+			br
+			span Titre :&nbsp;
+			input(type="text" name="title" required)
+			br
+			span Auteurs :
+			br
+			input(type="text" name="auteurs" required)
+			br
+			i.fa.fa-plus.fa-3x
+			br
+			span Conférence :&nbsp;
+			input(type="text" name="conference" required)
+			br
+			input(type="submit" value="Créer")
+
+			datalist(id="months")
+				option(value="Janvier")
+				option(value="Février")
+				option(value="Mars")
+				option(value="Avril")
+				option(value="Mai")
+				option(value="Juin")
+				option(value="Juillet")
+				option(value="Aout")
+				option(value="Septembre")
+				option(value="Octobre")
+				option(value="Novembre")
+				option(value="Décembre")
+	span Trié par :&nbsp;
+	
