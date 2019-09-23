@@ -7,11 +7,15 @@ block content
 		ul
 			each project in currentProjects
 				li.font-size-14
-					if (project._id !== "garandphd")
-						p.font-size-14.no-margins #{project.student}, #{project.title}
-					else
-						p.font-size-14.no-margins.display-inline #{project.student}, 
+					if (project._id === "maillouxmaster")
+						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
 						a(href="./project-maillouxmaster.pug") #{project.title}
+					else if (project._id === "nbourgoinmaster")
+						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
+						a(href="./project-nbourgoinmaster.pug") #{project.title}
+					else
+						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
+						a(href="") #{project.title}
 					p.project-sub-title.no-margins Supervisor: #{project.supervisor}
 					p.project-sub-title.no-margins Co-supervisor(s): #{project.cosupervisors}
 
