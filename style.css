@@ -102,8 +102,8 @@ footer {
 	left:0;
 	bottom:0;
 	border-top: var(--separator-border-size) solid var(--separator-border-color);
-  color: var(--metadata-text-color);
-  font-size: var(--metadata-text-size);
+	color: var(--metadata-text-color);
+	font-size: var(--metadata-text-size);
 	background-color: white;
 	text-align:center;
 	overflow: hidden;
@@ -214,6 +214,7 @@ footer {
 }
 
 #content {
+	overflow: hidden;
 	min-height: 100%;
 	margin-bottom: 40px;
 }
