@@ -1,6 +1,7 @@
 extends layout
 
 block content
+
 	include ./views/publications-variables
 	
 	h1 Publications 
@@ -14,7 +15,20 @@ block content
 			input(type="number" name="year" value="2020" min="1900" max="2099")
 			br
 			span Mois :&nbsp;
-			input(list="months" name="month" required)
+			select(name="month" required)
+				option(value="" disabled selected) - MOIS -
+				option(value="Janvier") Janvier
+				option(value="Février") Février
+				option(value="Mars") Mars
+				option(value="Avril") Avril
+				option(value="Mai") Mai
+				option(value="Juin") Juin
+				option(value="Juillet") Juillet
+				option(value="Aout") Aout
+				option(value="Septembre") Septembre
+				option(value="Octobre") Octobre
+				option(value="Novembre") Novembre 
+				option(value="Décembre") Décembre
 			br
 			span Titre :&nbsp;
 			input(type="text" name="title" required)
@@ -30,18 +44,37 @@ block content
 			br
 			input(type="submit" value="Créer")
 
-			datalist(id="months")
-				option(value="Janvier")
-				option(value="Février")
-				option(value="Mars")
-				option(value="Avril")
-				option(value="Mai")
-				option(value="Juin")
-				option(value="Juillet")
-				option(value="Aout")
-				option(value="Septembre")
-				option(value="Octobre")
-				option(value="Novembre")
-				option(value="Décembre")
 	span Trié par :&nbsp;
-	
+	select
+		option(value="date" selected) date
+	br
+	span Ordonner par :&nbsp;
+	select
+		option(value="croissant" selected) croissant
+		option(value="décroissant") décroissant
+	br
+
+	ul
+		each publication in publications
+			i.fa.fa-trash.fa-2x.close-button
+			div
+				div= publication.month
+				div= publication.year
+			div
+				div= publication.title
+				each author in publication.authors
+					| #{author},
+				div= publication.venue
+	div
+		span «
+		span 1
+		span 2
+		span 3
+		span »
+	div
+		| Afficher
+		select
+			option(value="10" selected) 10
+			option(value="20") 20
+			option(value="50") 50
+		| résultats par page
