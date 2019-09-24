@@ -163,6 +163,11 @@ footer {
 	background-color: var(--nav-lang-background-color-hover);
 }
 
+#select-navigation-button {
+	height: 36px;
+	border: none;
+}
+
 /*
 	Index page
 */
