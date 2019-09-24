@@ -151,6 +151,7 @@ footer {
 	text-align: center;
 	border-radius: 5px;
 	background-color: var(--nav-lang-background-color);
+	border: none;
 }
 
 .navigation-button:active {
@@ -299,6 +300,13 @@ text-align: center;
   color: var(--metadata-text-color);
   /* font-size: var(--metadata-text-size); */
 }
+
+
+/*
+	Publication
+*/
+
+
 
 
 /* 

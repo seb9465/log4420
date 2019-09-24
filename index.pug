@@ -4,7 +4,8 @@ block content
 	include ./views/descriptions
 	include ./views/feeds
 	#index-page-description-wrapper
-		span!= description.split("\n")
+		each line in description.split("\n")
+			p= line
 
 	h1 Nouvelles
 
