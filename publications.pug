@@ -1,49 +1,50 @@
 extends layout
 
 block content
-
 	include ./views/publications-variables
 	
-	h1 Publications 
-	button Ajouter une publication
-	
-	section
-		i.fa.fa-window-close.fa-2x.close-button
-		h1 Création d'une publication
-		form
-			span Année :&nbsp;
-			input(type="number" name="year" value="2020" min="1900" max="2099")
-			br
-			span Mois :&nbsp;
-			select(name="month" required)
-				option(value="" disabled selected) - MOIS -
-				option(value="Janvier") Janvier
-				option(value="Février") Février
-				option(value="Mars") Mars
-				option(value="Avril") Avril
-				option(value="Mai") Mai
-				option(value="Juin") Juin
-				option(value="Juillet") Juillet
-				option(value="Aout") Aout
-				option(value="Septembre") Septembre
-				option(value="Octobre") Octobre
-				option(value="Novembre") Novembre 
-				option(value="Décembre") Décembre
-			br
-			span Titre :&nbsp;
-			input(type="text" name="title" required)
-			br
-			span Auteurs :
-			br
-			input(type="text" name="auteurs" required)
-			br
-			i.fa.fa-plus.fa-3x
-			br
-			span Conférence :&nbsp;
-			input(type="text" name="conference" required)
-			br
-			input(type="submit" value="Créer")
+	section#modal
+		div#modal-content
+			a(href="#")
+				i.fa.fa-window-close.fa-2x.close-button
+			h1 Création d'une publication
+			form
+				span Année :&nbsp;
+				input(type="number" name="year" value="2020" min="1900" max="2099")
+				br
+				span Mois :&nbsp;
+				select(name="month" required)
+					option(value="" disabled selected) - MOIS -
+					option(value="Janvier") Janvier
+					option(value="Février") Février
+					option(value="Mars") Mars
+					option(value="Avril") Avril
+					option(value="Mai") Mai
+					option(value="Juin") Juin
+					option(value="Juillet") Juillet
+					option(value="Aout") Aout
+					option(value="Septembre") Septembre
+					option(value="Octobre") Octobre
+					option(value="Novembre") Novembre 
+					option(value="Décembre") Décembre
+				br
+				span Titre :&nbsp;
+				input(type="text" name="title" required)
+				br
+				span Auteurs :
+				br
+				input(type="text" name="auteurs" required)
+				br
+				i.fa.fa-plus.fa-3x
+				br
+				span Conférence :&nbsp;
+				input(type="text" name="conference" required)
+				br
+				input(type="submit" value="Créer")
 
+	h1 Publications
+	a(href="#modal") Ajouter une publication
+	br
 	span Trié par :&nbsp;
 	select
 		option(value="date" selected) date
@@ -54,24 +55,26 @@ block content
 		option(value="décroissant") décroissant
 	br
 
-	ul
+	ul#publication-table
 		each publication in publications
-			i.fa.fa-trash.fa-2x.close-button
-			div
-				div= publication.month
-				div= publication.year
-			div
-				div= publication.title
-				each author in publication.authors
-					| #{author},
-				div= publication.venue
-	div
-		span «
-		span 1
-		span 2
-		span 3
-		span »
-	div
+			li.publication-row
+				div.publication-delete
+					i.fa.fa-trash.fa-2x.close-button.delete-icon
+				div.publication-date
+					div.bold.capital= publication.month
+					div= publication.year
+				div.publication-content
+					div= publication.title
+					each author in publication.authors
+						| #{author},
+					div.italic= publication.venue
+	div.publication-menu
+		span.page-choice «
+		span.page-choice#page-selected 1
+		span.page-choice 2
+		span.page-choice 3
+		span.page-choice »
+	div.publication-menu
 		| Afficher
 		select
 			option(value="10" selected) 10

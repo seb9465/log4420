@@ -5,7 +5,7 @@ block content
 	include ./views/feeds
 	#index-page-description-wrapper
 		each line in description.split("\n")
-			p= line
+			p!= line
 
 	h1 Nouvelles
 
@@ -20,7 +20,8 @@ block content
 
 				p.feeds-post-date= feed.createdAt
 				if (feed.type === 'seminar')
-					p Prochain Séminaire : #{feed.title}
+					p Prochain Séminaire : 
+						a #{feed.title}
 					p= feed.presentator
 					p= feed.date
 					p!= feed.location
