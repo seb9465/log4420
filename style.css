@@ -368,18 +368,18 @@ text-align: center;
   text-align: center;
 }
 
-.page-choice {
+.publication-page-choice {
   margin-left: 5px;
   margin-right: 5px;
   padding: 5px 10px 5px 10px;
   border: 1px solid var(--publication-pagination-link-border-color);
+  cursor: pointer;
 }
-
-.page-choice:hover {
+.publication-page-choice:hover {
   background-color: var(--publication-pagination-link-notactive-hover-background-color);
 }
 
-#page-selected {
+#publication-page-selected {
   background-color: var(--publication-pagination-link-active-background-color);
   border: 1px solid var(--publication-pagination-link-active-border-color);
 }
