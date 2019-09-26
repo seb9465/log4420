@@ -42,17 +42,16 @@ block content
 				input(type="submit" value="Créer")
 
 	h1 Publications
-	a(href="#modal") Ajouter une publication
-	br
-	span Trié par :&nbsp;
-	select
-		option(value="date" selected) date
-	br
-	span Ordonner par :&nbsp;
-	select
-		option(value="croissant" selected) croissant
-		option(value="décroissant") décroissant
-	br
+	a(href="#modal")#publication-add-pub-button Ajouter une publication
+	div#publication-filter-by-wrapper
+		span Trié par :&nbsp;
+		select
+			option(value="date" selected) date
+	div#publication-order-by-wrapper
+		span Ordonner par :&nbsp;
+		select
+			option(value="croissant" selected) croissant
+			option(value="décroissant") décroissant
 
 	ul#publication-table
 		each publication in publications

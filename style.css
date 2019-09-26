@@ -437,6 +437,25 @@ text-align: center;
   color: var(--my-font-color);
 }
 
+#publication-add-pub-button {
+  float: right;
+  text-decoration: none;
+  border: 1px solid grey;
+  background-color: rgb(221,221,221);
+  box-shadow: 1px 1px 2px #88888883;
+  color: black;
+  padding: 4px;
+  border-radius: 2px;
+}
+#publication-add-pub-button:hover {
+  border-color: black;
+}
+
+#publication-filter-by-wrapper,
+#publication-order-by-wrapper {
+  margin-top: 10px;
+}
+
 /* 
 	Universal
 */
