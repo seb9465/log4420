@@ -1,8 +1,7 @@
 extends layout
 
 block content
-	include ./views/projects-variables
-	
+	include ../variables/projects-variables
 	h1 Current projects
 		ul
 			each project in currentProjects
@@ -20,5 +19,4 @@ block content
 						p.project-sub-title.no-margins Supervisor: #{project.supervisor}
 					if (project.cosupervisor)
 						p.project-sub-title.no-margins Co-supervisor(s): #{project.cosupervisor}
-
 	h1 Past projects
