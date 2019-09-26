@@ -328,33 +328,31 @@ text-align: center;
 .publication-row {
   display: flex;
   flex-direction: row;
-  min-height: 100px;
+  padding-top: 5px;
+  margin-bottom: 5px;
   border-top: 1px solid var(--publication-top-border-color);
 }
 
 .publication-delete {
   margin-left: 5px;
-  margin-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+  position: relative;
+  width: 28px;
 }
 
 .delete-icon {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
   color: var(--publication-delete-icon-color);
+ 
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .publication-date {
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-left: 30px;
   min-width: 80px;
+  padding-top: 12px
 }
 
 .publication-content {

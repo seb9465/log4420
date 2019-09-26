@@ -56,16 +56,16 @@ block content
 	ul#publication-table
 		each publication in publications
 			li.publication-row
-				div.publication-delete
+				.publication-delete
 					i.fa.fa-trash.fa-2x.close-button.delete-icon
-				div.publication-date
-					div.bold.capital= publication.month
-					div= publication.year
-				div.publication-content
+				.publication-date
+					.bold= publication.year
+					.capital= publication.month
+				.publication-content
 					div= publication.title
 					each author in publication.authors
 						| #{author},
-					div.italic= publication.venue
+					.italic= publication.venue
 	div.publication-menu
 		span.page-choice «
 		span.page-choice#page-selected 1
