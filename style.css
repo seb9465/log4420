@@ -373,6 +373,7 @@ text-align: center;
   margin-right: 5px;
   padding: 5px 10px 5px 10px;
   border: 1px solid var(--publication-pagination-link-border-color);
+  color: var(--publication-pagination-link-color);
   cursor: pointer;
 }
 .publication-page-choice:hover {
@@ -382,6 +383,7 @@ text-align: center;
 #publication-page-selected {
   background-color: var(--publication-pagination-link-active-background-color);
   border: 1px solid var(--publication-pagination-link-active-border-color);
+  color: var(--publication-pagination-link-active-color);
 }
 
 #open-modal {
