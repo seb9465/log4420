@@ -9,14 +9,16 @@ block content
 				li.font-size-14
 					if (project._id === "maillouxmaster")
 						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
-						a(href="./project-maillouxmaster.pug") #{project.title}
+						a(href="./project-maillouxmaster.pug").project-title-link #{project.title}
 					else if (project._id === "nbourgoinmaster")
 						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
-						a(href="./project-nbourgoinmaster.pug") #{project.title}
+						a(href="./project-nbourgoinmaster.pug").project-title-link #{project.title}
 					else
 						p.font-size-14.no-margins.display-inline #{project.student},&nbsp;
-						a(href="") #{project.title}
-					p.project-sub-title.no-margins Supervisor: #{project.supervisor}
-					p.project-sub-title.no-margins Co-supervisor(s): #{project.cosupervisors}
+						a.project-title-link #{project.title}
+					if (project.supervisor)
+						p.project-sub-title.no-margins Supervisor: #{project.supervisor}
+					if (project.cosupervisor)
+						p.project-sub-title.no-margins Co-supervisor(s): #{project.cosupervisor}
 
 	h1 Past projects

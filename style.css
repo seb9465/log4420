@@ -109,6 +109,12 @@ footer {
 	overflow: hidden;
 }
 
+#content {
+	overflow: hidden;
+	min-height: 100%;
+	margin-bottom: 100px;
+}
+
 /*
   Header
 */
@@ -227,10 +233,8 @@ footer {
 	font-size: 12px;
 }
 
-#content {
-	overflow: hidden;
-	min-height: 100%;
-	margin-bottom: 100px;
+.project-title-link {
+  text-decoration: none;
 }
 
 /*
