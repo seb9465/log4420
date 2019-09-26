@@ -5,15 +5,15 @@ block content
 	
 	section#modal
 		div#modal-content
-			a(href="#")
+			a(href="#")#modal-close
 				i.fa.fa-window-close.fa-2x.close-button
 			h1 Création d'une publication
 			form
-				span Année :&nbsp;
-				input(type="number" name="year" value="2020" min="1900" max="2099")
+				span Année :
+				input(type="number" name="year" value="2020" min="1900" max="2099").modal-entry
 				br
-				span Mois :&nbsp;
-				select(name="month" required)
+				span Mois :
+				select(name="month" required).modal-entry
 					option(value="" disabled selected) - MOIS -
 					option(value="Janvier") Janvier
 					option(value="Février") Février
@@ -28,17 +28,17 @@ block content
 					option(value="Novembre") Novembre 
 					option(value="Décembre") Décembre
 				br
-				span Titre :&nbsp;
-				input(type="text" name="title" required)
+				span Titre :
+				input(type="text" name="title" required).modal-entry
 				br
 				span Auteurs :
 				br
-				input(type="text" name="auteurs" required)
+				input(type="text" name="auteurs" required).modal-entry
 				br
 				i.fa.fa-plus.fa-3x
 				br
-				span Conférence :&nbsp;
-				input(type="text" name="conference" required)
+				span Conférence :
+				input(type="text" name="conference" required).modal-entry
 				br
 				input(type="submit" value="Créer")
 
