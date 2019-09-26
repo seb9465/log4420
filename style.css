@@ -298,19 +298,18 @@ footer {
   list-style-type: none;
   display: grid;
   grid-template-columns: auto auto;
-  grid-row-gap: 20px;
 }
 
 .team-past-members-title-container {
-text-align: center;
+  text-align: center;
 }
 
 .team-past-member-list-wrapper {
   overflow: hidden;
   list-style-type: none;
-  display: grid;
-  grid-template-columns: auto;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-past-members-name {
