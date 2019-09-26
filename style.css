@@ -328,6 +328,7 @@ text-align: center;
 .publication-row {
   display: flex;
   flex-direction: row;
+  min-height: 100px;
   border-top: 1px solid var(--publication-top-border-color);
 }
 
@@ -336,10 +337,14 @@ text-align: center;
   margin-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  display: inline-block;
   height: 100%;
+  vertical-align: middle;
 }
 
 .delete-icon {
+  display: inline-block;
+  height: 100%;
   vertical-align: middle;
   color: var(--publication-delete-icon-color);
 }
@@ -411,15 +416,30 @@ text-align: center;
 #modal-content {
   background-color: white;
   position: absolute;
+  border-radius: 5px;
+  padding: 10px;
+  width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.modal-entry {
+  width: 100%;
+  border: 1px solid var(--publication-form-text-border-color);
+  border-radius: 2px;
+  padding: 7px;
+  margin-bottom: 5px;
+}
+
+#modal-close {
+  float: right;
+  color: var(--my-font-color);
+}
+
 /* 
 	Universal
 */
-
 .no-margins {
 	margin: 0;
 }
