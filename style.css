@@ -296,8 +296,9 @@ footer {
 #team-past-members-container {
   overflow: hidden;
   list-style-type: none;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .team-past-members-title-container {
