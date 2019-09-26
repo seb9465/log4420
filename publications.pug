@@ -2,6 +2,7 @@ extends layout
 
 block content
 	include ./views/publications-variables
+	include ./views/publications-mixin
 	section#modal
 		#modal-content
 			a(href="")#modal-close
@@ -50,19 +51,7 @@ block content
 		select
 			option(value="croissant" selected) croissant
 			option(value="décroissant") décroissant
-	ul#publication-table
-		each publication in publications
-			li.publication-row
-				.publication-delete
-					i.fa.fa-trash.fa-2x.close-button.delete-icon
-				.publication-date
-					.bold= publication.year
-					.capital= publication.month
-				.publication-content
-					div= publication.title
-					each author in publication.authors
-						| #{author},
-					.italic= publication.venue
+	+publications
 	.publication-menu
 		span.publication-page-choice «
 		span.publication-page-choice#publication-page-selected 1
