@@ -1,0 +1,77 @@
+extends layout
+
+block content
+	include ../variables/members
+	-
+		var membersByTitle = {};
+		var pastMembers = {};
+		members.forEach((member) => {
+			const memberTitles = member.titles;
+			memberTitles.forEach((title) => {
+				if (title.current) {
+					if (!(title.title in membersByTitle)) {
+						membersByTitle[title.title] = [];
+					}
+
+					member.titles = member.titles.filter(item => item.title === title.title);
+					membersByTitle[title.title].push(member);
+				} else {
+					if (!(title.title in pastMembers)) {
+						pastMembers[title.title] = [];
+					}
+
+					member.titles = member.titles.filter(item => item.title === title.title);
+					pastMembers[title.title].push(member);
+				}
+			});
+		});
+		var titleKeys = Object.keys(membersByTitle);
+		var pastMembersTitleKeys = Object.keys(pastMembers);
+
+	mixin keyToTitleText(key)
+		if (key === 'associateprofessor')
+			h3.team-title Professors
+		else if (key === 'masterstudent')
+			h3.team-title Master students
+		else if (key === 'phdstudent')
+			h3.team-title PhD students
+		else if (key === 'researchassociate')
+			h3.team-title Research associates
+
+	h1 Team
+
+	each key in titleKeys
+		+keyToTitleText(key)
+			
+		ul.team-list-wrapper
+			each member in membersByTitle[key]
+				li.team-member-wrapper
+					div.team-member-image-wrapper
+						if (member.image)
+							img.team-member-image(src=member.image)
+						else
+							i.fa.fa-user-circle.fa-5x.img-circle
+					div.team-member-infos-wrapper
+						if (member.homepage)
+							a.team-member-infos-name(href=member.homepage) #{member.firstname} &nbsp; #{member.lastname}
+						else
+							span.team-member-infos-name #{member.firstname} &nbsp; #{member.lastname}
+						.team-member-sub-infos-wrapper
+							if (key === 'associateprofessor')
+								p.team-member-infos-title Associate professor
+							if (member.email)
+								a.team-member-infos-email= member.email
+
+	br
+	h2 Past members
+	#team-past-members-container
+		each key in pastMembersTitleKeys
+			.team-past-members-title-container
+				+keyToTitleText(key)
+				ul.team-past-member-list-wrapper
+					each member in pastMembers[key]
+						li
+							span.team-past-members-name #{member.firstname} &nbsp; #{member.lastname}
+
+					
+	

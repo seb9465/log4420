@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	include ../variables/mailloux-master
+	include ./publications-mixin
+	
+	h1= project.title
+	p.project-sub-title.no-margins.margin-left-10 Student: #{project.student}
+	p.project-sub-title.no-margins.margin-left-10 Supervisor: #{project.supervisor}
+	p= project.description
+
+	+publications

@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	include ../variables/descriptions
+	include ../variables/feeds
+	#index-page-description-wrapper
+		each line in description.split("\n")
+			p!= line
+	h1 Nouvelles
+	ul(style="list-style-type:none;")
+		each feed in feeds
+			li#index-news-list
+				.index-news-wrapper
+					if (feed.type === 'seminar')
+						img.index-news-img(src='./../img/presentation-icon.png')
+					else 
+						i.fa.fa-file-text-o.index-news-ico
+
+				p.feeds-post-date= feed.createdAt
+				if (feed.type === 'seminar')
+					p Prochain Séminaire : 
+						a #{feed.title}
+					p= feed.presentator
+					p= feed.date
+					p!= feed.location
+				else
+					p!= feed.text

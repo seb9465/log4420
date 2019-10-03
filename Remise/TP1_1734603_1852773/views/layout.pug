@@ -1,0 +1,29 @@
+html
+	link(href="../style.css" rel="stylesheet" type="text/css")
+	head
+		title TP1 - LOG4420
+		meta(charset='utf-8')
+	block body
+		body
+			header(style="display:grid;grid-template-columns: auto auto;justify-items:center;")
+				div
+					div#header-title-section
+						p.header-main-title Labo Semantic IA
+						p.header-second-title Intelligence artificielle
+						p.header-second-title Web sémantique
+					div(style="float:left;")
+						img#header-img(src='../img/logo-coding.png' style="float:left;")
+				div#header-navigation-section
+					a.navigation-button(href='./index.pug') Home
+					a.navigation-button(href='./team.pug') Team
+					a.navigation-button(href='./projects.pug') Projects
+					a.navigation-button(href='./publications.pug') Publications
+					a.navigation-button Contact
+					select#select-navigation-button.navigation-button
+						option(value='fr' selected) FR
+						option(value='en') EN
+			div#content
+				block content
+			footer
+				div.footer-text Cadorette, Sébatien (1734603)
+				div.footer-text Stephenne, Colin (1852773)

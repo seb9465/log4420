@@ -1,0 +1,67 @@
+extends layout
+
+block content
+	include ../variables/publications-variables
+	include ./publications-mixin
+	section#modal
+		#modal-content
+			a(href="")#modal-close
+				i.fa.fa-window-close.fa-2x.close-button
+			h1 Création d'une publication
+			form
+				span Année :
+				input(type="number" name="year" value="2020" min="1900" max="2099").modal-entry
+				br
+				span Mois :
+				select(name="month" required).modal-entry
+					option(value="" disabled selected) - MOIS -
+					option(value="Janvier") Janvier
+					option(value="Février") Février
+					option(value="Mars") Mars
+					option(value="Avril") Avril
+					option(value="Mai") Mai
+					option(value="Juin") Juin
+					option(value="Juillet") Juillet
+					option(value="Aout") Aout
+					option(value="Septembre") Septembre
+					option(value="Octobre") Octobre
+					option(value="Novembre") Novembre 
+					option(value="Décembre") Décembre
+				div
+					span Titre :
+					input(type="text" name="title" required).modal-entry
+				div
+					div Auteurs :
+					input(type="text" name="auteurs" required).modal-entry
+				div
+					i.fa.fa-plus.fa-3x
+				div
+					span Conférence :
+					input(type="text" name="conference" required).modal-entry
+				div
+					input(type="submit" value="Créer")
+	h1 Publications
+	a(href="#modal")#publication-add-pub-button Ajouter une publication
+	#publication-filter-by-wrapper
+		span Trié par :&nbsp;
+		select
+			option(value="date" selected) date
+	#publication-order-by-wrapper
+		span Ordonner par :&nbsp;
+		select
+			option(value="croissant" selected) croissant
+			option(value="décroissant") décroissant
+	+publications
+	.publication-menu
+		span.publication-page-choice «
+		span.publication-page-choice#publication-page-selected 1
+		span.publication-page-choice 2
+		span.publication-page-choice 3
+		span.publication-page-choice »
+	.publication-menu
+		| Afficher
+		select
+			option(value="10" selected) 10
+			option(value="20") 20
+			option(value="50") 50
+		| résultats par page

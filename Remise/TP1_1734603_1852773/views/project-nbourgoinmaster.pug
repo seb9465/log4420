@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	include ../variables/bourgoin-master
+	include ./publications-mixin
+	
+	h1= project.title
+	p.project-sub-title.no-margins.margin-left-10 Student: #{project.title}
+	p.project-sub-title.no-margins.margin-left-10 Supervisor: #{project.supervisor}
+	p.project-sub-title.no-margins.margin-left-10 Co-supervisor(s): #{project.cosupervisor}
+	p= project.description
+
+	+publications
